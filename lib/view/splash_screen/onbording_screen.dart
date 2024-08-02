@@ -1,7 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:coupkart/controller/onbording_controller.dart';
 import 'package:coupkart/route/app_route.dart';
-import 'package:coupkart/utils/app_color.dart';
 import 'package:coupkart/widget/custom_body_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
