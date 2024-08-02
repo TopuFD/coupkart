@@ -1,5 +1,6 @@
 import 'package:coupkart/utils/app_color.dart';
 import 'package:coupkart/utils/app_image.dart';
+import 'package:coupkart/widget/custom_body_button.dart';
 import 'package:coupkart/widget/custom_text_field.dart';
 import 'package:coupkart/widget/document_text.dart';
 import 'package:coupkart/widget/heading_text.dart';
@@ -12,6 +13,7 @@ class SigninScreen extends StatelessWidget {
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passController = TextEditingController();
+  RxBool onCheck = false.obs;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class SigninScreen extends StatelessWidget {
         children: [
           Container(
             width: Get.width,
-            height: Get.height / 2.1,
+            height: Get.height / 2.7,
             decoration: const BoxDecoration(
                 color: AppColor.primaryColor,
                 borderRadius: BorderRadius.only(
@@ -52,42 +54,105 @@ class SigninScreen extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
-            height: Get.height * .05,
-          ),
-          //sign in part starting from here===============================================================>
-          SingleChildScrollView(
-            child: Expanded(
-              child: SizedBox(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: Get.width * .07),
-                  child: Column(
-                    children: [
-                      const HeadingText(headingText: "Sign In"),
-                      SizedBox(
-                        height: Get.height * .02,
+          Expanded(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: Get.width * .05),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: Get.height * .05,
+                    ),
+                    const HeadingText(headingText: "Sign In"),
+                    SizedBox(
+                      height: Get.height * .02,
+                    ),
+                    const DocumentText(
+                        documentText:
+                            " Welcome Back! Please enter your details."),
+                    SizedBox(
+                      height: Get.height * .03,
+                    ),
+                    CustomTextFormField(
+                        prefixIcon: const Icon(Icons.email),
+                        keyboardType: TextInputType.emailAddress,
+                        hintText: "Enter E-mail",
+                        controller: emailController),
+                    SizedBox(
+                      height: Get.height * .03,
+                    ),
+                    CustomTextFormField(
+                        prefixIcon: const Icon(Icons.key_sharp),
+                        suffixIcon: const Icon(Icons.remove_red_eye),
+                        hintText: "Enter Password",
+                        controller: passController),
+
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Obx(() {
+                              return Checkbox(
+                                  activeColor: AppColor.primaryColor,
+                                  value: onCheck.value,
+                                  onChanged: (checkValue) {
+                                    onCheck.value = checkValue!;
+                                  });
+                            }),
+                            const DocumentText(documentText: "Remember Me")
+                          ],
+                        ),
+                        TextButton(
+                            onPressed: () {},
+                            child: const Text(
+                              'Forget Password?',
+                              style: TextStyle(
+                                color: AppColor.primaryColor,
+                                fontSize: 16,
+                                fontFamily: 'Poppins',
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ))
+                      ],
+                    ),
+                    SizedBox(
+                      height: Get.height * .03,
+                    ),
+                    CustomBodyButton(buttonTitle: "Sign In", ontap: () {}),
+                    SizedBox(
+                      height: Get.height * .04,
+                    ),
+
+                    //bottom part starting here ==============================================>
+                    RichText(
+                        text: const TextSpan(children: [
+                      TextSpan(
+                        text: 'Don’t have an account?',
+                        style: TextStyle(
+                          color: AppColor.secondaryTxtColor,
+                          fontSize: 14,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w400,
+                          height: 0,
+                        ),
                       ),
-                      const DocumentText(
-                          documentText:
-                              " Welcome Back! Please enter your details."),
-                      SizedBox(
-                        height: Get.height * .03,
-                      ),
-                      CustomTextFormField(
-                          prefixIcon: const Icon(Icons.email),
-                          keyboardType: TextInputType.emailAddress,
-                          hintText: "Enter E-mail",
-                          controller: emailController),
-                      SizedBox(
-                        height: Get.height * .03,
-                      ),
-                      CustomTextFormField(
-                        prefixIcon:const Icon(Icons.key),
-                        suffixIcon: IconButton(onPressed: (){}, icon:const Icon(Icons.remove_red_eye)),
-                          hintText: "Enter Password",
-                          controller: passController)
-                    ],
-                  ),
+                      TextSpan(
+                        text: 'Sign Up',
+                        style: TextStyle(
+                          color: AppColor.primaryColor,
+                          fontSize: 16,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w500,
+                          height: 0,
+                        ),
+                      )
+                    ])),
+
+                    SizedBox(
+                      height: Get.height * .02,
+                    ),
+                  ],
                 ),
               ),
             ),
