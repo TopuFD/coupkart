@@ -1,13 +1,16 @@
-import 'package:coupkart/view/splash_screen/other_screen/onbording_screen.dart';
+import 'package:coupkart/view/auth_screen/signin_screen.dart';
+import 'package:coupkart/view/splash_screen/onbording_screen.dart';
 import 'package:coupkart/view/splash_screen/splash.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppRoute {
   static String splashScreen = "/splashScreen";
   static String onbordingScreen = "/onbordingScreen";
+  static String signinScreen = "/signinScreen";
 
   static List<GetPage> getPage = [
     GetPage(name: splashScreen, page: () => const SplashScreen()),
-    GetPage(name: onbordingScreen, page: () => const OnbordingScreen()),
+    GetPage(name: onbordingScreen, page: () =>  OnbordingScreen()),
+    GetPage(name: signinScreen, page: () =>  SigninScreen()),
   ];
 }
