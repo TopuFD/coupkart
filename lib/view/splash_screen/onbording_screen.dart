@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:coupkart/controller/onbording_controller.dart';
 import 'package:coupkart/route/app_route.dart';
 import 'package:coupkart/utils/app_color.dart';
+import 'package:coupkart/widget/custom_body_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -52,23 +53,11 @@ class OnbordingScreen extends StatelessWidget {
           SizedBox(
             height: Get.height * .03,
           ),
-          InkWell(
-            onTap: () {
-              Get.toNamed(AppRoute.signinScreen);
-            },
-            child: Container(
-              height: 60,
-              width: double.maxFinite,
-              decoration: BoxDecoration(
-                  color: AppColor.primaryColor,
-                  borderRadius: BorderRadius.circular(20)),
-              child: const Center(
-                  child: Text(
-                "Get Started",
-                style: TextStyle(fontSize: 20, color: Colors.white),
-              )),
-            ),
-          ),
+          CustomBodyButton(
+              buttonTitle: "Get Started",
+              ontap: () {
+                Get.toNamed(AppRoute.signinScreen);
+              }),
           SizedBox(
             height: Get.height * .03,
           ),
