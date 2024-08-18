@@ -17,25 +17,6 @@ class OtpCodeScreen extends StatefulWidget {
 }
 
 class _OtpCodeScreenState extends State<OtpCodeScreen> {
-  late TextEditingController textEditingController;
-  StreamController<ErrorAnimationType>? errorController;
-  String currentText = "";
-  bool isDisposed = false;
-
-  @override
-  void initState() {
-    super.initState();
-    textEditingController = TextEditingController();
-    errorController = StreamController<ErrorAnimationType>();
-  }
-
-  @override
-  void dispose() {
-    isDisposed = true;
-    textEditingController.dispose();
-    errorController?.close();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -79,20 +60,6 @@ class _OtpCodeScreenState extends State<OtpCodeScreen> {
                     ),
                     animationDuration: const Duration(milliseconds: 300),
                     enableActiveFill: true,
-                    errorAnimationController: errorController,
-                    controller: textEditingController,
-                    onCompleted: (v) {
-                      if (!isDisposed) {
-                        Get.snackbar("Me", "Completed");
-                      }
-                    },
-                    onChanged: (value) {
-                      if (!isDisposed) {
-                        setState(() {
-                          currentText = value;
-                        });
-                      }
-                    },
                     beforeTextPaste: (text) {
                       return true;
                     },
