@@ -1,3 +1,4 @@
+import 'package:coupkart/route/app_route.dart';
 import 'package:coupkart/widget/auth_top_item.dart';
 import 'package:coupkart/widget/custom_body_button.dart';
 import 'package:coupkart/widget/custom_text_field.dart';
@@ -53,9 +54,13 @@ class ForgetPassScreen extends StatelessWidget {
                       },
                     ),
                     SizedBox(
-                      height: Get.height /4.5,
+                      height: Get.height / 4.5,
                     ),
-                    CustomBodyButton(buttonTitle: "Send OTP", ontap: () {}),
+                    CustomBodyButton(
+                        buttonTitle: "Send OTP",
+                        ontap: () {
+                          Get.toNamed(AppRoute.otpCodeScreen);
+                        }),
                     SizedBox(
                       height: Get.height * .04,
                     ),
