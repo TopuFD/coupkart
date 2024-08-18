@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:coupkart/route/app_route.dart';
 import 'package:coupkart/utils/app_color.dart';
 import 'package:coupkart/widget/auth_top_item.dart';

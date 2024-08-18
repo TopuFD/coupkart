@@ -110,7 +110,11 @@ class SigninScreen extends StatelessWidget {
                       SizedBox(
                         height: Get.height * .03,
                       ),
-                      CustomBodyButton(buttonTitle: "Login", ontap: () {}),
+                      CustomBodyButton(
+                          buttonTitle: "Login",
+                          ontap: () {
+                            Get.toNamed(AppRoute.navigationScreen);
+                          }),
                       SizedBox(
                         height: Get.height * .04,
                       ),
