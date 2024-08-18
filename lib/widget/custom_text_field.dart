@@ -10,8 +10,6 @@ class CustomTextFormField extends StatelessWidget {
   final bool obscureText;
   final Icon? prefixIcon;
   final Icon? suffixIcon;
-  // ignore: non_constant_identifier_names
-  final GlobalKey? Key;
   final String? textFieldHeading;
 
   const CustomTextFormField({
@@ -23,8 +21,6 @@ class CustomTextFormField extends StatelessWidget {
     this.obscureText = false,
     this.prefixIcon,
     this.suffixIcon,
-    // ignore: non_constant_identifier_names
-    this.Key,
     this.textFieldHeading,
   });
 
@@ -59,19 +55,18 @@ class CustomTextFormField extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
           ),
         ),
-        child: Form(
-          key: key,
-          child: TextFormField(
-            controller: controller,
-            validator: validator,
-            keyboardType: keyboardType,
-            obscureText: obscureText,
-            decoration: InputDecoration(
-              border: InputBorder.none,
-              hintText: hintText,
-              prefixIcon: prefixIcon,
-              suffixIcon: suffixIcon,
-            ),
+        child: TextFormField(
+          controller: controller,
+          validator: validator,
+          keyboardType: keyboardType,
+          obscureText: obscureText,
+          decoration: InputDecoration(
+            border: InputBorder.none,
+            hintText: hintText,
+            prefixIcon: prefixIcon,
+            suffixIcon: suffixIcon,
+            prefixIconColor: AppColor.secondaryColor,
+            suffixIconColor:const Color.fromARGB(255, 138, 137, 137)
           ),
         ),
       ),

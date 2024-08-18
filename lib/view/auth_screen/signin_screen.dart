@@ -5,6 +5,7 @@ import 'package:coupkart/widget/custom_body_button.dart';
 import 'package:coupkart/widget/custom_text_field.dart';
 import 'package:coupkart/widget/document_text.dart';
 import 'package:coupkart/widget/heading_text.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -109,15 +110,16 @@ class SigninScreen extends StatelessWidget {
                       SizedBox(
                         height: Get.height * .03,
                       ),
-                      CustomBodyButton(buttonTitle: "Sign In", ontap: () {}),
+                      CustomBodyButton(buttonTitle: "Login", ontap: () {}),
                       SizedBox(
                         height: Get.height * .04,
                       ),
 
                       //bottom part starting here ==============================================>
+
                       RichText(
-                          text: const TextSpan(children: [
-                        TextSpan(
+                          text: TextSpan(children: [
+                        const TextSpan(
                           text: 'Don’t have an account?',
                           style: TextStyle(
                             color: AppColor.secondaryTxtColor,
@@ -128,15 +130,18 @@ class SigninScreen extends StatelessWidget {
                           ),
                         ),
                         TextSpan(
-                          text: 'Sign Up',
-                          style: TextStyle(
-                            color: AppColor.primaryColor,
-                            fontSize: 16,
-                            fontFamily: 'Poppins',
-                            fontWeight: FontWeight.w500,
-                            height: 0,
-                          ),
-                        )
+                            text: 'Sign Up',
+                            style: const TextStyle(
+                              color: AppColor.primaryColor,
+                              fontSize: 16,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w500,
+                              height: 0,
+                            ),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                Get.toNamed(AppRoute.signUpScreen);
+                              })
                       ])),
 
                       SizedBox(

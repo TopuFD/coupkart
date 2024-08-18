@@ -1,5 +1,6 @@
 import 'package:coupkart/utils/app_color.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class CustomBodyButton extends StatelessWidget {
   final String buttonTitle;
@@ -11,7 +12,7 @@ class CustomBodyButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 60,
+      height: Get.height * .06,
       width: double.infinity,
       child: ElevatedButton(
           style: ButtonStyle(

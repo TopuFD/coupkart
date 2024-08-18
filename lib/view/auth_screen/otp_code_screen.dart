@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:coupkart/route/app_route.dart';
 import 'package:coupkart/utils/app_color.dart';
 import 'package:coupkart/widget/auth_top_item.dart';
 import 'package:coupkart/widget/custom_body_button.dart';
@@ -16,9 +17,10 @@ class OtpCodeScreen extends StatefulWidget {
 }
 
 class _OtpCodeScreenState extends State<OtpCodeScreen> {
-  TextEditingController textEditingController = TextEditingController();
+  late TextEditingController textEditingController;
   StreamController<ErrorAnimationType>? errorController;
   String currentText = "";
+  bool isDisposed = false;
 
   @override
   void initState() {
@@ -29,6 +31,7 @@ class _OtpCodeScreenState extends State<OtpCodeScreen> {
 
   @override
   void dispose() {
+    isDisposed = true;
     textEditingController.dispose();
     errorController?.close();
     super.dispose();
@@ -79,10 +82,16 @@ class _OtpCodeScreenState extends State<OtpCodeScreen> {
                     errorAnimationController: errorController,
                     controller: textEditingController,
                     onCompleted: (v) {
-                      print("Completed");
+                      if (!isDisposed) {
+                        Get.snackbar("Me", "Completed");
+                      }
                     },
                     onChanged: (value) {
-                      currentText = value;
+                      if (!isDisposed) {
+                        setState(() {
+                          currentText = value;
+                        });
+                      }
                     },
                     beforeTextPaste: (text) {
                       return true;
@@ -103,7 +112,11 @@ class _OtpCodeScreenState extends State<OtpCodeScreen> {
                   SizedBox(
                     height: Get.height / 8,
                   ),
-                  CustomBodyButton(buttonTitle: "Confirm", ontap: () {}),
+                  CustomBodyButton(
+                      buttonTitle: "Confirm",
+                      ontap: () {
+                        Get.toNamed(AppRoute.resetPassScreen);
+                      }),
                   SizedBox(
                     height: Get.height * .04,
                   ),

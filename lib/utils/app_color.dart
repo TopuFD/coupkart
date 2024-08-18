@@ -7,4 +7,5 @@ class AppColor {
   static const Color greyColor = Color(0xFFECECEC);
   static const Color primaryTxtColor = Color(0xFF111111);
   static const Color secondaryTxtColor = Color(0xFF414141);
+  static const Color formHeadingTxtColor = Color(0xFF222222);
 }

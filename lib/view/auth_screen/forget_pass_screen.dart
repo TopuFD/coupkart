@@ -20,7 +20,7 @@ class ForgetPassScreen extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
-            CustomAuthTopItem(),
+            const CustomAuthTopItem(),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: Get.width * .05),
               child: Form(
