@@ -4,6 +4,7 @@ import 'package:coupkart/view/auth_screen/reset_pass_screen.dart';
 import 'package:coupkart/view/auth_screen/signin_screen.dart';
 import 'package:coupkart/view/auth_screen/signup_screen.dart';
 import 'package:coupkart/view/other_screen/navigation_bar.dart';
+import 'package:coupkart/view/other_screen/profile_screens/edit_profileinfo.dart';
 import 'package:coupkart/view/other_screen/profile_screens/profile_info.dart';
 import 'package:coupkart/view/splash_screen/onbording_screen.dart';
 import 'package:coupkart/view/splash_screen/splash.dart';
@@ -19,6 +20,7 @@ class AppRoute {
   static String signUpScreen = "/signUpScreen";
   static String navigationScreen = "/navigationScreen";
   static String profileInfo = "/profileInfo";
+  static String editProfileInfo = "/editProfileInfo";
 
   static List<GetPage> getPage = [
     GetPage(name: splashScreen, page: () => const SplashScreen()),
@@ -29,6 +31,7 @@ class AppRoute {
     GetPage(name: resetPassScreen, page: () => ResetPassScreen()),
     GetPage(name: signUpScreen, page: () => SignupScreen()),
     GetPage(name: navigationScreen, page: () => BottomNavigationScreen()),
-    GetPage(name: profileInfo, page: () => ProfileInfo()),
+    GetPage(name: profileInfo, page: () => const ProfileInfo()),
+    GetPage(name: editProfileInfo, page: () =>EditProfileinfo()),
   ];
 }

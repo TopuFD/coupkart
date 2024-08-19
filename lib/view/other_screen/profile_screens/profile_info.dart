@@ -1,4 +1,6 @@
+import 'package:coupkart/route/app_route.dart';
 import 'package:coupkart/utils/app_color.dart';
+import 'package:coupkart/widget/custom_body_button.dart';
 import 'package:coupkart/widget/form_heading_text.dart';
 import 'package:coupkart/widget/heading_text.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +16,7 @@ class ProfileInfo extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         automaticallyImplyLeading: true,
-        title: const HeadingText(headingText: "Profile Information"),
+        title: const HeadingText(headingText: "Account Information"),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: Get.width * .04),
@@ -23,7 +25,7 @@ class ProfileInfo extends StatelessWidget {
             SizedBox(
               height: Get.height * .05,
             ),
-            
+
             //name info stating from here========================>
             const FormHeadingText(formHeadingText: "Name"),
             Container(
@@ -43,7 +45,7 @@ class ProfileInfo extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: EdgeInsets.only(left: Get.width * .02),
+                  padding: EdgeInsets.only(left: Get.width * .03),
                   child: const Text(
                     'Henry Johnson',
                     style: TextStyle(
@@ -57,7 +59,9 @@ class ProfileInfo extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: Get.height * .02,),
+            SizedBox(
+              height: Get.height * .02,
+            ),
             //email info stating from here========================>
             const FormHeadingText(formHeadingText: "Email"),
             Container(
@@ -77,7 +81,7 @@ class ProfileInfo extends StatelessWidget {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Padding(
-                  padding: EdgeInsets.only(left: Get.width * .02),
+                  padding: EdgeInsets.only(left: Get.width * .03),
                   child: const Text(
                     'jhondhow123@gmail.com',
                     style: TextStyle(
@@ -91,6 +95,13 @@ class ProfileInfo extends StatelessWidget {
                 ),
               ),
             ),
+            const Expanded(child: SizedBox()),
+            CustomBodyButton(
+                buttonTitle: "Edit Account",
+                ontap: () {
+                  Get.toNamed(AppRoute.editProfileInfo);
+                }),
+            SizedBox(height: Get.height * .02,)
           ],
         ),
       ),
