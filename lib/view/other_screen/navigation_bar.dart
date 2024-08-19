@@ -9,33 +9,36 @@ class BottomNavigationScreen extends StatelessWidget {
   BottomNavigationScreen({super.key});
 
   BottombarController bottombarController = Get.put(BottombarController());
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: bottombarController
-            .pageList[bottombarController.currentIndex.value],
+    return Scaffold(body: Obx(() {
+      return bottombarController
+          .pageList[bottombarController.currentIndex.value];
+    }),
+
         //bottom navigation part start from here===================================>
         bottomNavigationBar: Obx(
-          () {
-            return FloatingNavbar(
-              currentIndex: bottombarController.currentIndex.value,
-              onTap: (int val) {
-                bottombarController.currentIndex.value = val;
-              },
-              items: [
-                FloatingNavbarItem(icon: Icons.home, title: 'Home'),
-                FloatingNavbarItem(icon: Icons.find_in_page, title: 'Explore'),
-                FloatingNavbarItem(icon: Icons.favorite, title: 'Favorite'),
-                FloatingNavbarItem(icon: Icons.person, title: 'Profile'),
-              ],
-              backgroundColor: Colors.transparent,
-              selectedItemColor: AppColor.whiteColor,
-              unselectedItemColor: Colors.grey,
-              selectedBackgroundColor: AppColor.primaryColor,
-              padding: EdgeInsets.zero,
-              margin: EdgeInsets.zero,
-            );
+      () {
+        return FloatingNavbar(
+          currentIndex: bottombarController.currentIndex.value,
+          onTap: (value) {
+            bottombarController.currentIndex.value = value;
           },
-        ));
+          items: [
+            FloatingNavbarItem(icon: Icons.home, title: 'Home'),
+            FloatingNavbarItem(icon: Icons.find_in_page, title: 'Explore'),
+            FloatingNavbarItem(icon: Icons.favorite, title: 'Favorite'),
+            FloatingNavbarItem(icon: Icons.person, title: 'Profile'),
+          ],
+          backgroundColor: Colors.transparent,
+          selectedItemColor: AppColor.whiteColor,
+          unselectedItemColor: Colors.grey,
+          selectedBackgroundColor: AppColor.primaryColor,
+          padding: EdgeInsets.zero,
+          margin: EdgeInsets.zero,
+        );
+      },
+    ));
   }
 }
