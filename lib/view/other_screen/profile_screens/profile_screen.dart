@@ -5,9 +5,12 @@ import 'package:coupkart/widget/profile_custom_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// ignore: must_be_immutable
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  ProfileScreen({super.key});
 
+  RxBool isCancelBtnTap = false.obs;
+  RxBool isLogoutBtnTap = false.obs;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,10 +64,99 @@ class ProfileScreen extends StatelessWidget {
                 title: "Settings",
                 leadingIcon: Icon(Icons.settings),
                 trailingIcon: Icon(Icons.keyboard_arrow_right)),
-            const ProfileCustomBtn(
+            ProfileCustomBtn(
+                ontap: () {
+                  Get.defaultDialog(
+                      title: "Log Out",
+                      titleStyle: const TextStyle(color: AppColor.redColor),
+                      content: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: Get.width * .02,
+                        ),
+                        child: Column(
+                          children: [
+                            const Divider(
+                              color: AppColor.primaryColor,
+                            ),
+                            SizedBox(
+                              height: Get.height * .02,
+                            ),
+                            const Text(
+                              'Are you sure you want to Logout from your Account?',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color: AppColor.secondaryTxtColor,
+                                fontSize: 14,
+                                fontFamily: 'DM Sans',
+                                fontWeight: FontWeight.w400,
+                                height: 0,
+                              ),
+                            ),
+                            SizedBox(
+                              height: Get.height * .02,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Obx(() => ElevatedButton(
+                                      onPressed: () {
+                                        isCancelBtnTap.value =
+                                            !isCancelBtnTap.value;
+                                        Get.back();
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: isCancelBtnTap.value
+                                            ? AppColor.whiteColor
+                                            : AppColor.primaryColor,
+                                      ),
+                                      child: Text(
+                                        'Cancel',
+                                        style: TextStyle(
+                                          color: isCancelBtnTap.value
+                                              ? AppColor.primaryColor
+                                              : AppColor.whiteColor,
+                                          fontSize: 14,
+                                          fontFamily: 'Poppins',
+                                          fontWeight: FontWeight.w400,
+                                          height: 0,
+                                        ),
+                                      ),
+                                    )),
+                                Obx(() => ElevatedButton(
+                                      onPressed: () {
+                                        isLogoutBtnTap.value =
+                                            !isLogoutBtnTap.value;
+                                        Get.back();
+
+                                        // isLogoutBtnTap.value = false;
+                                      },
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: isLogoutBtnTap.value
+                                            ? AppColor.whiteColor
+                                            : AppColor.primaryColor,
+                                      ),
+                                      child: Text(
+                                        'Log Out',
+                                        style: TextStyle(
+                                          color: isLogoutBtnTap.value
+                                              ? AppColor.primaryColor
+                                              : AppColor.whiteColor,
+                                          fontSize: 14,
+                                          fontFamily: 'Poppins',
+                                          fontWeight: FontWeight.w400,
+                                          height: 0,
+                                        ),
+                                      ),
+                                    ))
+                              ],
+                            )
+                          ],
+                        ),
+                      ));
+                },
                 title: "Log Out",
-                leadingIcon: Icon(Icons.logout),
-                trailingIcon: Icon(Icons.keyboard_arrow_right)),
+                leadingIcon: const Icon(Icons.logout),
+                trailingIcon: const Icon(Icons.keyboard_arrow_right)),
           ],
         ),
       ),
