@@ -68,14 +68,33 @@ class HomeScreen extends StatelessWidget {
                 SizedBox(
                   height: Get.height * .01,
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
-                    DealsElement(image: AppImage.dealsOne, title: "Food"),
                     DealsElement(
-                        image: AppImage.dealsTwo, title: "Night Light"),
-                    DealsElement(image: AppImage.dealsOne, title: "Activity"),
-                    DealsElement(image: AppImage.dealsTwo, title: "Events")
+                        ontap: () {
+                          Get.toNamed(AppRoute.viewAllFood);
+                        },
+                        image: AppImage.dealsOne,
+                        title: "Food"),
+                    DealsElement(
+                        ontap: () {
+                          Get.toNamed(AppRoute.viewNightLight);
+                        },
+                        image: AppImage.dealsTwo,
+                        title: "Night Light"),
+                    DealsElement(
+                        ontap: () {
+                          Get.toNamed(AppRoute.viewActivity);
+                        },
+                        image: AppImage.dealsOne,
+                        title: "Activity"),
+                    DealsElement(
+                        ontap: () {
+                          Get.toNamed(AppRoute.viewEvent);
+                        },
+                        image: AppImage.dealsTwo,
+                        title: "Events")
                   ],
                 ),
 

@@ -3,6 +3,9 @@ import 'package:coupkart/view/auth_screen/otp_code_screen.dart';
 import 'package:coupkart/view/auth_screen/reset_pass_screen.dart';
 import 'package:coupkart/view/auth_screen/signin_screen.dart';
 import 'package:coupkart/view/auth_screen/signup_screen.dart';
+import 'package:coupkart/view/other_screen/home_screens/activity.dart';
+import 'package:coupkart/view/other_screen/home_screens/event.dart';
+import 'package:coupkart/view/other_screen/home_screens/night_light.dart';
 import 'package:coupkart/view/other_screen/home_screens/popular_deal.dart';
 import 'package:coupkart/view/other_screen/home_screens/viewall_food.dart';
 import 'package:coupkart/view/other_screen/navigation_bar.dart';
@@ -33,6 +36,9 @@ class AppRoute {
   static String aboutUs = "/aboutUs";
   static String popularDeal = "/popularDeal";
   static String viewAllFood = "/veiwAllFood";
+  static String viewNightLight = "/viewNightLight";
+  static String viewActivity = "/viewActivity";
+  static String viewEvent = "/viewEvent";
 
   static List<GetPage> getPage = [
     GetPage(name: splashScreen, page: () => const SplashScreen()),
@@ -45,6 +51,9 @@ class AppRoute {
     GetPage(name: navigationScreen, page: () => BottomNavigationScreen()),
     GetPage(name: popularDeal, page: () => const PopularDeal()),
     GetPage(name: viewAllFood, page: () => const ViewAllFood()),
+    GetPage(name: viewNightLight, page: () => const ViewNightLight()),
+    GetPage(name: viewActivity, page: () => const ViewActivity()),
+    GetPage(name: viewEvent, page: () => const ViewEvent()),
     GetPage(name: profileInfo, page: () => const ProfileInfo()),
     GetPage(name: editProfileInfo, page: () => EditProfileinfo()),
     GetPage(name: settingScreen, page: () => SettingsPage()),

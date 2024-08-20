@@ -5,14 +5,14 @@ import 'package:coupkart/widget/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class PopularDeal extends StatelessWidget {
-  const PopularDeal({super.key});
+class ViewEvent extends StatelessWidget {
+  const ViewEvent({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.whiteColor,
-        appBar: const CustomAppbar(title: "Popular Deals"),
+        appBar: const CustomAppbar(title: "Event"),
         body: GridView.builder(
           physics: const BouncingScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -27,7 +27,7 @@ class PopularDeal extends StatelessWidget {
             return SizedBox(
               height: Get.height * .28,
               child: const ProductCard(
-                image: AppImage.productOne,
+                image: AppImage.eventPic,
                 desce: "20% Off Any 1/2 Jerk Meal With a Drink\n",
                 bottomText: "Pepper Grill & Bar",
                 price: "Save  \$2",

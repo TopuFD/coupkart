@@ -8,4 +8,7 @@ class AppImage {
   static const dealsTwo = "assets/images/product/nightLight.png";
   static const productOne = "assets/images/product/product_one.png";
   static const productTwo= "assets/images/product/product_two.png";
+  static const nightLightPic= "assets/images/product/nightLightPic.png";
+  static const activityPic= "assets/images/product/activity.png";
+  static const eventPic= "assets/images/product/event.png";
 }
