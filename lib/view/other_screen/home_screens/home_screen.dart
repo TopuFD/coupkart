@@ -1,3 +1,4 @@
+import 'package:coupkart/route/app_route.dart';
 import 'package:coupkart/utils/app_color.dart';
 import 'package:coupkart/utils/app_image.dart';
 import 'package:coupkart/widget/deals_element.dart';
@@ -96,7 +97,9 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed(AppRoute.popularDeal);
+                      },
                       child: const Text(
                         'View all',
                         style: TextStyle(
@@ -120,8 +123,7 @@ class HomeScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemCount: 10,
                       itemBuilder: (context, index) {
-                        return ProductCard(
-                          ontap: (){},
+                        return const ProductCard(
                             image: AppImage.productOne,
                             desce: "20% Off Any 1/2 Jerk Meal With a Drink\n",
                             bottomText: "Pepper Grill & Bar",
@@ -171,7 +173,7 @@ class HomeScreen extends StatelessWidget {
                       itemCount: 10,
                       itemBuilder: (context, index) {
                         return ProductCard(
-                          ontap: (){},
+                            ontap: () {},
                             image: AppImage.productTwo,
                             desce: "20% Off Any 1/2 Jerk Meal With a Drink\n",
                             bottomText: "Pepper Grill & Bar",

@@ -17,7 +17,11 @@ class EditProfileinfo extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        automaticallyImplyLeading: true,
+        leading: IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: const Icon(Icons.arrow_back_ios_new)),
         title: const HeadingText(headingText: "Information Edit"),
       ),
       body: Padding(
@@ -32,7 +36,8 @@ class EditProfileinfo extends StatelessWidget {
             const FormHeadingText(formHeadingText: "Name"),
             CustomTextFormField(
                 prefixIcon: const Icon(Icons.person),
-                hintText: "Enter Name", controller: nameController),
+                hintText: "Enter Name",
+                controller: nameController),
             SizedBox(
               height: Get.height * .02,
             ),
@@ -40,7 +45,8 @@ class EditProfileinfo extends StatelessWidget {
             const FormHeadingText(formHeadingText: "Email"),
             CustomTextFormField(
                 prefixIcon: const Icon(Icons.email),
-                hintText: "Enter Email", controller: emailController),
+                hintText: "Enter Email",
+                controller: emailController),
 
             const Expanded(child: SizedBox()),
 

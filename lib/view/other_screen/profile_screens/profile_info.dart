@@ -15,7 +15,11 @@ class ProfileInfo extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        automaticallyImplyLeading: true,
+        leading: IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: const Icon(Icons.arrow_back_ios_new)),
         title: const HeadingText(headingText: "Account Information"),
       ),
       body: Padding(
@@ -101,7 +105,9 @@ class ProfileInfo extends StatelessWidget {
                 ontap: () {
                   Get.toNamed(AppRoute.editProfileInfo);
                 }),
-            SizedBox(height: Get.height * .02,)
+            SizedBox(
+              height: Get.height * .02,
+            )
           ],
         ),
       ),
