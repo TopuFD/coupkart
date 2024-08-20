@@ -5,8 +5,8 @@ import 'package:coupkart/widget/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class PopularDeal extends StatelessWidget {
-  const PopularDeal({super.key});
+class ViewAllFood extends StatelessWidget {
+  const ViewAllFood({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class PopularDeal extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: AppColor.whiteColor,
           centerTitle: true,
-          title: const HeadingText(headingText: "Popular Deals"),
+          title: const HeadingText(headingText: "Food"),
           leading: IconButton(
               onPressed: () {
                 Get.back();
@@ -35,7 +35,7 @@ class PopularDeal extends StatelessWidget {
             return SizedBox(
               height: Get.height * .28,
               child: const ProductCard(
-                image: AppImage.productOne,
+                image: AppImage.productTwo,
                 desce: "20% Off Any 1/2 Jerk Meal With a Drink\n",
                 bottomText: "Pepper Grill & Bar",
                 price: "Save  \$2",

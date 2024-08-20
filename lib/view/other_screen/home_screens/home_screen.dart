@@ -148,7 +148,9 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Get.toNamed(AppRoute.viewAllFood);
+                      },
                       child: const Text(
                         'View all',
                         style: TextStyle(
