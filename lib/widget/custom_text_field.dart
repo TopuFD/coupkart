@@ -55,22 +55,18 @@ class CustomTextFormField extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
           ),
         ),
-        child: Padding(
-          padding:
-              EdgeInsets.only(left: Get.width * .03, top: Get.height * .007),
-          child: TextFormField(
-            controller: controller,
-            validator: validator,
-            keyboardType: keyboardType,
-            obscureText: obscureText,
-            decoration: InputDecoration(
-                border: InputBorder.none,
-                hintText: hintText,
-                prefixIcon: prefixIcon,
-                suffixIcon: suffixIcon,
-                prefixIconColor: AppColor.secondaryColor,
-                suffixIconColor: const Color.fromARGB(255, 138, 137, 137)),
-          ),
+        child: TextFormField(
+          controller: controller,
+          validator: validator,
+          keyboardType: keyboardType,
+          obscureText: obscureText,
+          decoration: InputDecoration(
+              border: InputBorder.none,
+              hintText: hintText,
+              prefixIcon: prefixIcon,
+              suffixIcon: suffixIcon,
+              prefixIconColor: AppColor.secondaryColor,
+              suffixIconColor: const Color.fromARGB(255, 138, 137, 137)),
         ),
       ),
     ]);

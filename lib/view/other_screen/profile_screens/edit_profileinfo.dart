@@ -31,6 +31,7 @@ class EditProfileinfo extends StatelessWidget {
             //name info stating from here========================>
             const FormHeadingText(formHeadingText: "Name"),
             CustomTextFormField(
+                prefixIcon: const Icon(Icons.person),
                 hintText: "Enter Name", controller: nameController),
             SizedBox(
               height: Get.height * .02,
@@ -38,6 +39,7 @@ class EditProfileinfo extends StatelessWidget {
             //email info stating from here========================>
             const FormHeadingText(formHeadingText: "Email"),
             CustomTextFormField(
+                prefixIcon: const Icon(Icons.email),
                 hintText: "Enter Email", controller: emailController),
 
             const Expanded(child: SizedBox()),

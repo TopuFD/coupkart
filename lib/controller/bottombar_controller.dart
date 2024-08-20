@@ -11,6 +11,6 @@ class BottombarController extends GetxController {
     const HomeScreen(),
     const ExploreScreen(),
     const FavouriteScreen(),
-    ProfileScreen(),
+    const ProfileScreen(),
   ];
 }
