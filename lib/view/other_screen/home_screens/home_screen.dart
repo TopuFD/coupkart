@@ -1,6 +1,7 @@
 import 'package:coupkart/utils/app_color.dart';
 import 'package:coupkart/utils/app_image.dart';
 import 'package:coupkart/widget/deals_element.dart';
+import 'package:coupkart/widget/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -61,7 +62,7 @@ class HomeScreen extends StatelessWidget {
                     height: 0,
                   ),
                 ),
-          
+
                 // Deal element of home page start form here =========================================>
                 SizedBox(
                   height: Get.height * .01,
@@ -76,15 +77,15 @@ class HomeScreen extends StatelessWidget {
                     DealsElement(image: AppImage.dealsTwo, title: "Events")
                   ],
                 ),
-          
+
                 // popular deals of home page start form here =========================================>
                 SizedBox(
                   height: Get.height * .02,
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       'Popular Deals',
                       style: TextStyle(
                         color: AppColor.secondaryTxtColor,
@@ -94,14 +95,17 @@ class HomeScreen extends StatelessWidget {
                         height: 0,
                       ),
                     ),
-                    Text(
-                      'View all',
-                      style: TextStyle(
-                        color: AppColor.primaryColor,
-                        fontSize: 14,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w400,
-                        height: 0,
+                    InkWell(
+                      onTap: () {},
+                      child: const Text(
+                        'View all',
+                        style: TextStyle(
+                          color: AppColor.primaryColor,
+                          fontSize: 14,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w400,
+                          height: 0,
+                        ),
                       ),
                     )
                   ],
@@ -116,78 +120,22 @@ class HomeScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemCount: 10,
                       itemBuilder: (context, index) {
-                        return SizedBox(
-                          height: Get.height * .28,
-                          width: Get.width * .45,
-                          child: Card(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: Get.width * .02,
-                                  vertical: Get.height * .01),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    AppImage.productOne,
-                                    height: Get.height * .16,
-                                    fit: BoxFit.fill,
-                                  ),
-                                  SizedBox(
-                                    height: Get.height * .01,
-                                  ),
-                                  const Text(
-                                    '20% Off Any 1/2 Jerk Meal With a Drink\n',
-                                    style: TextStyle(
-                                      color: AppColor.primaryTxtColor,
-                                      fontSize: 14,
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w500,
-                                      height: 0,
-                                    ),
-                                  ),
-                                  const Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        'Pepper Grill & Bar',
-                                        style: TextStyle(
-                                          color: AppColor.primaryTxtColor,
-                                          fontSize: 10,
-                                          fontFamily: 'Poppins',
-                                          fontWeight: FontWeight.w400,
-                                          height: 0,
-                                        ),
-                                      ),
-                                      Text(
-                                        'Save  \$2',
-                                        style: TextStyle(
-                                          color: AppColor.primaryColor,
-                                          fontSize: 10,
-                                          fontFamily: 'Poppins',
-                                          fontWeight: FontWeight.w600,
-                                          height: 0,
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        );
+                        return ProductCard(
+                          ontap: (){},
+                            image: AppImage.productOne,
+                            desce: "20% Off Any 1/2 Jerk Meal With a Drink\n",
+                            bottomText: "Pepper Grill & Bar",
+                            price: "Save  \$2");
                       }),
                 ),
                 // food deals of home page start form here =========================================>
                 SizedBox(
                   height: Get.height * .02,
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       'Food',
                       style: TextStyle(
                         color: AppColor.secondaryTxtColor,
@@ -197,14 +145,17 @@ class HomeScreen extends StatelessWidget {
                         height: 0,
                       ),
                     ),
-                    Text(
-                      'View all',
-                      style: TextStyle(
-                        color: AppColor.primaryColor,
-                        fontSize: 14,
-                        fontFamily: 'Poppins',
-                        fontWeight: FontWeight.w400,
-                        height: 0,
+                    InkWell(
+                      onTap: () {},
+                      child: const Text(
+                        'View all',
+                        style: TextStyle(
+                          color: AppColor.primaryColor,
+                          fontSize: 14,
+                          fontFamily: 'Poppins',
+                          fontWeight: FontWeight.w400,
+                          height: 0,
+                        ),
                       ),
                     )
                   ],
@@ -219,68 +170,12 @@ class HomeScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemCount: 10,
                       itemBuilder: (context, index) {
-                        return SizedBox(
-                          height: Get.height * .28,
-                          width: Get.width * .45,
-                          child: Card(
-                            child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: Get.width * .02,
-                                  vertical: Get.height * .01),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    AppImage.productTwo,
-                                    height: Get.height * .16,
-                                    fit: BoxFit.fill,
-                                  ),
-                                  SizedBox(
-                                    height: Get.height * .01,
-                                  ),
-                                  const Text(
-                                    '20% Off Any 1/2 Jerk Meal With a Drink\n',
-                                    style: TextStyle(
-                                      color: AppColor.primaryTxtColor,
-                                      fontSize: 14,
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w500,
-                                      height: 0,
-                                    ),
-                                  ),
-                                  const Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        'Pepper Grill & Bar',
-                                        style: TextStyle(
-                                          color: AppColor.primaryTxtColor,
-                                          fontSize: 10,
-                                          fontFamily: 'Poppins',
-                                          fontWeight: FontWeight.w400,
-                                          height: 0,
-                                        ),
-                                      ),
-                                      Text(
-                                        'Save  \$2',
-                                        style: TextStyle(
-                                          color: AppColor.primaryColor,
-                                          fontSize: 10,
-                                          fontFamily: 'Poppins',
-                                          fontWeight: FontWeight.w600,
-                                          height: 0,
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        );
+                        return ProductCard(
+                          ontap: (){},
+                            image: AppImage.productTwo,
+                            desce: "20% Off Any 1/2 Jerk Meal With a Drink\n",
+                            bottomText: "Pepper Grill & Bar",
+                            price: "Save  \$2");
                       }),
                 ),
               ],
