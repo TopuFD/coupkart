@@ -7,5 +7,5 @@ class AppImage {
   static const dealsOne = "assets/images/product/food.png";
   static const dealsTwo = "assets/images/product/nightLight.png";
   static const productOne = "assets/images/product/product_one.png";
-  static const productTwo= "assets/images/product/product_Two.png";
+  static const productTwo= "assets/images/product/product_two.png";
 }

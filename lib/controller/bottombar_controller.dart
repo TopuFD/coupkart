@@ -1,6 +1,6 @@
 import 'package:coupkart/view/other_screen/explore_screen.dart';
 import 'package:coupkart/view/other_screen/favourite_screen.dart';
-import 'package:coupkart/view/other_screen/home_screen.dart';
+import 'package:coupkart/view/other_screen/home_screens/home_screen.dart';
 import 'package:coupkart/view/other_screen/profile_screens/profile_screen.dart';
 import 'package:get/get.dart';
 
