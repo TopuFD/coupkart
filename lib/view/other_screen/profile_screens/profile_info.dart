@@ -1,8 +1,8 @@
 import 'package:coupkart/route/app_route.dart';
 import 'package:coupkart/utils/app_color.dart';
+import 'package:coupkart/widget/custom_appbar.dart';
 import 'package:coupkart/widget/custom_body_button.dart';
 import 'package:coupkart/widget/form_heading_text.dart';
-import 'package:coupkart/widget/heading_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
@@ -13,15 +13,7 @@ class ProfileInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: const Icon(Icons.arrow_back_ios_new)),
-        title: const HeadingText(headingText: "Account Information"),
-      ),
+      appBar: const CustomAppbar(title: "Account Information"),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: Get.width * .04),
         child: Column(

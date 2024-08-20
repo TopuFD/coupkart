@@ -12,7 +12,9 @@ class BottomNavigationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Obx(() {
+    return Scaffold(
+      backgroundColor: AppColor.greyColor,
+      body: Obx(() {
       return bottombarController
           .pageList[bottombarController.currentIndex.value];
     }),
@@ -35,6 +37,7 @@ class BottomNavigationScreen extends StatelessWidget {
           selectedItemColor: AppColor.whiteColor,
           unselectedItemColor: Colors.grey,
           selectedBackgroundColor: AppColor.primaryColor,
+          elevation: 5,
           padding: EdgeInsets.zero,
           margin: EdgeInsets.zero,
         );

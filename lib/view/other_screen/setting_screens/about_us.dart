@@ -1,5 +1,5 @@
 
-import 'package:coupkart/widget/heading_text.dart';
+import 'package:coupkart/widget/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,15 +9,7 @@ class AboutUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const HeadingText(headingText: "About Us"),
-        leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: const Icon(Icons.arrow_back_ios_new)),
-      ),
+      appBar: const CustomAppbar(title: "About us"),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: Get.width * .03),
         child: SingleChildScrollView(

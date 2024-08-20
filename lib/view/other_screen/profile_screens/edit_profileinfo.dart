@@ -1,8 +1,8 @@
 import 'package:coupkart/route/app_route.dart';
+import 'package:coupkart/widget/custom_appbar.dart';
 import 'package:coupkart/widget/custom_body_button.dart';
 import 'package:coupkart/widget/custom_text_field.dart';
 import 'package:coupkart/widget/form_heading_text.dart';
-import 'package:coupkart/widget/heading_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,15 +15,7 @@ class EditProfileinfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: const Icon(Icons.arrow_back_ios_new)),
-        title: const HeadingText(headingText: "Information Edit"),
-      ),
+      appBar: const CustomAppbar(title: "Information Edit"),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: Get.width * .04),
         child: Column(

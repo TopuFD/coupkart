@@ -1,5 +1,6 @@
 import 'package:coupkart/route/app_route.dart';
 import 'package:coupkart/utils/app_color.dart';
+import 'package:coupkart/widget/custom_appbar.dart';
 import 'package:coupkart/widget/custom_body_button.dart';
 import 'package:coupkart/widget/custom_text_field.dart';
 import 'package:coupkart/widget/form_heading_text.dart';
@@ -15,24 +16,7 @@ class ChangePassScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          'Settings',
-          style: TextStyle(
-            color: AppColor.secondaryTxtColor,
-            fontSize: 18,
-            fontFamily: 'Open Sans',
-            fontWeight: FontWeight.w600,
-            height: 0,
-          ),
-        ),
-        leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: const Icon(Icons.arrow_back_ios)),
-      ),
+      appBar: const CustomAppbar(title: "Change Password"),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: Get.width * .03),
         child: Column(

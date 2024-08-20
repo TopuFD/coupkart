@@ -1,8 +1,7 @@
 
+import 'package:coupkart/widget/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../../utils/app_color.dart';
 
 class TermsofServices extends StatelessWidget {
   const TermsofServices({super.key});
@@ -12,16 +11,7 @@ class TermsofServices extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
-          'Terms of Services',
-          style: TextStyle(
-            color: AppColor.secondaryTxtColor,
-            fontSize: 18,
-            fontFamily: 'Open Sans',
-            fontWeight: FontWeight.w600,
-            height: 0,
-          ),
-        ),
+        title: const CustomAppbar(title: "Terms of Services"),
         leading: IconButton(
             onPressed: () {
               Get.back();

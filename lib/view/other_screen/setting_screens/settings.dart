@@ -1,5 +1,5 @@
 import 'package:coupkart/route/app_route.dart';
-import 'package:coupkart/utils/app_color.dart';
+import 'package:coupkart/widget/custom_appbar.dart';
 import 'package:coupkart/widget/profile_custom_btn.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,24 +14,7 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          'Settings',
-          style: TextStyle(
-            color: AppColor.secondaryTxtColor,
-            fontSize: 18,
-            fontFamily: 'Open Sans',
-            fontWeight: FontWeight.w600,
-            height: 0,
-          ),
-        ),
-        leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: const Icon(Icons.arrow_back_ios_new)),
-      ),
+      appBar: const CustomAppbar(title: "Settings"),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: Get.width * .03),
         child: Column(
