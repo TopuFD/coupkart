@@ -15,6 +15,7 @@ class SubscriptionPage extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: Get.width * .05),
         child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
           child: SizedBox(
             width: Get.width,
             child: Column(
@@ -63,6 +64,7 @@ class SubscriptionPage extends StatelessWidget {
                 subscriptionCart("Standard", 9.99,(){}),
                 subscriptionCart("Premium", 13.99,(){}),
                 subscriptionCart("Super Vip", 19.99,(){}),
+                SizedBox(height: Get.height * .02,)
               ],
             ),
           ),
