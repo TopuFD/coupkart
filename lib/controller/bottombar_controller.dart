@@ -1,7 +1,7 @@
-import 'package:coupkart/view/other_screen/explore_screen/explore_screen.dart';
-import 'package:coupkart/view/other_screen/favorite_pages/favourite_screen.dart';
-import 'package:coupkart/view/other_screen/home_screens/home_screen.dart';
-import 'package:coupkart/view/other_screen/profile_screens/profile_screen.dart';
+import 'package:coupkart/view/explore_screen/explore_screen.dart';
+import 'package:coupkart/view/favorite_pages/favourite_screen.dart';
+import 'package:coupkart/view/home_screens/home_screen.dart';
+import 'package:coupkart/view/profile_screens/profile_screen.dart';
 import 'package:get/get.dart';
 
 class BottombarController extends GetxController {

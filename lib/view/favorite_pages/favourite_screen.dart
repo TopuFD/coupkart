@@ -1,9 +1,9 @@
 import 'package:coupkart/utils/app_color.dart';
-import 'package:coupkart/widget/product_details.dart';
+import 'package:coupkart/view/home_screens/product_details.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../utils/app_image.dart';
-import '../../../widget/product_card.dart';
+import '../../utils/app_image.dart';
+import '../../widget/product_card.dart';
 
 class FavouriteScreen extends StatelessWidget {
   const FavouriteScreen({super.key});
