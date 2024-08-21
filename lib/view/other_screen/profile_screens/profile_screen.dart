@@ -53,10 +53,13 @@ class ProfileScreen extends StatelessWidget {
                 title: "Profile Information",
                 leadingIcon: const Icon(Icons.person),
                 trailingIcon: const Icon(Icons.keyboard_arrow_right)),
-            const ProfileCustomBtn(
+            ProfileCustomBtn(
+                ontap: () {
+                  Get.toNamed(AppRoute.subscriptionPage);
+                },
                 title: "Subscribtion",
-                leadingIcon: Icon(Icons.star_rate),
-                trailingIcon: Icon(Icons.keyboard_arrow_right)),
+                leadingIcon: const Icon(Icons.star_rate),
+                trailingIcon: const Icon(Icons.keyboard_arrow_right)),
             ProfileCustomBtn(
                 ontap: () {
                   Get.toNamed(AppRoute.settingScreen);

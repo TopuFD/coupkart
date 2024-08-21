@@ -17,6 +17,7 @@ import 'package:coupkart/view/other_screen/setting_screens/settings.dart';
 import 'package:coupkart/view/other_screen/setting_screens/terms_services.dart';
 import 'package:coupkart/view/splash_screen/onbording_screen.dart';
 import 'package:coupkart/view/splash_screen/splash.dart';
+import 'package:coupkart/view/subscription_screens/subscription.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 class AppRoute {
@@ -30,6 +31,7 @@ class AppRoute {
   static String navigationScreen = "/navigationScreen";
   static String profileInfo = "/profileInfo";
   static String editProfileInfo = "/editProfileInfo";
+  static String subscriptionPage = "/subscriptionPage";
   static String settingScreen = "/settingScreen";
   static String changePassScreen = "/changePassScreen";
   static String termsOfServices = "/termsOfServices";
@@ -56,6 +58,7 @@ class AppRoute {
     GetPage(name: viewEvent, page: () => const ViewEvent()),
     GetPage(name: profileInfo, page: () => const ProfileInfo()),
     GetPage(name: editProfileInfo, page: () => EditProfileinfo()),
+    GetPage(name: subscriptionPage, page: () =>const SubscriptionPage()),
     GetPage(name: settingScreen, page: () => SettingsPage()),
     GetPage(name: changePassScreen, page: () => ChangePassScreen()),
     GetPage(name: termsOfServices, page: () => const TermsofServices()),

@@ -11,4 +11,5 @@ class AppImage {
   static const nightLightPic= "assets/images/product/nightLightPic.png";
   static const activityPic= "assets/images/product/activity.png";
   static const eventPic= "assets/images/product/event.png";
+  static const subscriptionPic= "assets/images/subscription.png";
 }
