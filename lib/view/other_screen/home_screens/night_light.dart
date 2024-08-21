@@ -1,4 +1,3 @@
-
 import 'package:coupkart/utils/app_image.dart';
 import 'package:coupkart/widget/custom_appbar.dart';
 import 'package:coupkart/widget/product_card.dart';
@@ -11,7 +10,7 @@ class ViewNightLight extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar:const CustomAppbar(title: "Night Light"),
+        appBar: const CustomAppbar(title: "Night Light"),
         body: GridView.builder(
           physics: const BouncingScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

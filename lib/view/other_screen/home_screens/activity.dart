@@ -1,4 +1,3 @@
-import 'package:coupkart/utils/app_color.dart';
 import 'package:coupkart/utils/app_image.dart';
 import 'package:coupkart/widget/custom_appbar.dart';
 import 'package:coupkart/widget/product_card.dart';
@@ -11,7 +10,6 @@ class ViewActivity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.whiteColor,
         appBar: const CustomAppbar(title: "Activity"),
         body: GridView.builder(
           physics: const BouncingScrollPhysics(),
