@@ -3,6 +3,7 @@ import 'package:coupkart/view/auth_screen/otp_code_screen.dart';
 import 'package:coupkart/view/auth_screen/reset_pass_screen.dart';
 import 'package:coupkart/view/auth_screen/signin_screen.dart';
 import 'package:coupkart/view/auth_screen/signup_screen.dart';
+import 'package:coupkart/view/explore_screen/places.dart';
 import 'package:coupkart/view/home_screens/activity.dart';
 import 'package:coupkart/view/home_screens/event.dart';
 import 'package:coupkart/view/home_screens/night_light.dart';
@@ -17,6 +18,7 @@ import 'package:coupkart/view/setting_screens/settings.dart';
 import 'package:coupkart/view/setting_screens/terms_services.dart';
 import 'package:coupkart/view/splash_screen/onbording_screen.dart';
 import 'package:coupkart/view/splash_screen/splash.dart';
+import 'package:coupkart/view/subscription_screens/payment.dart';
 import 'package:coupkart/view/subscription_screens/subscription.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
@@ -32,6 +34,7 @@ class AppRoute {
   static String profileInfo = "/profileInfo";
   static String editProfileInfo = "/editProfileInfo";
   static String subscriptionPage = "/subscriptionPage";
+  static String paymentPage = "/paymentPage";
   static String settingScreen = "/settingScreen";
   static String changePassScreen = "/changePassScreen";
   static String termsOfServices = "/termsOfServices";
@@ -41,6 +44,7 @@ class AppRoute {
   static String viewNightLight = "/viewNightLight";
   static String viewActivity = "/viewActivity";
   static String viewEvent = "/viewEvent";
+  static String barOfPlaces = "/barOfPlaces";
 
   static List<GetPage> getPage = [
     GetPage(name: splashScreen, page: () => const SplashScreen()),
@@ -56,9 +60,11 @@ class AppRoute {
     GetPage(name: viewNightLight, page: () => const ViewNightLight()),
     GetPage(name: viewActivity, page: () => const ViewActivity()),
     GetPage(name: viewEvent, page: () => const ViewEvent()),
+    GetPage(name: barOfPlaces, page: () => const BarOfPlaces()),
     GetPage(name: profileInfo, page: () => const ProfileInfo()),
     GetPage(name: editProfileInfo, page: () => EditProfileinfo()),
-    GetPage(name: subscriptionPage, page: () =>const SubscriptionPage()),
+    GetPage(name: subscriptionPage, page: () => const SubscriptionPage()),
+    GetPage(name: paymentPage, page: () => PaymentPage()),
     GetPage(name: settingScreen, page: () => SettingsPage()),
     GetPage(name: changePassScreen, page: () => ChangePassScreen()),
     GetPage(name: termsOfServices, page: () => const TermsofServices()),

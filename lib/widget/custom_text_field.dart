@@ -40,34 +40,34 @@ class CustomTextFormField extends StatelessWidget {
                 height: 0,
               ),
             ),
-      Container(
-        height: 42,
-        padding: EdgeInsets.symmetric(
-            horizontal: Get.width * .01, vertical: Get.height * .01),
-        decoration: ShapeDecoration(
-          color: AppColor.greyColor,
-          shape: RoundedRectangleBorder(
-            side: const BorderSide(
-              width: 0.50,
-              strokeAlign: BorderSide.strokeAlignOutside,
-              color: AppColor.secondaryColor,
-            ),
-            borderRadius: BorderRadius.circular(16),
-          ),
-        ),
-        child: TextFormField(
-          controller: controller,
-          validator: validator,
-          keyboardType: keyboardType,
-          obscureText: obscureText,
-          decoration: InputDecoration(
-              border: InputBorder.none,
-              hintText: hintText,
-              prefixIcon: prefixIcon,
-              suffixIcon: suffixIcon,
-              prefixIconColor: AppColor.secondaryColor,
-              suffixIconColor: const Color.fromARGB(255, 138, 137, 137)),
-        ),
+      TextFormField(
+        controller: controller,
+        validator: validator,
+        keyboardType: keyboardType,
+        obscureText: obscureText,
+        
+        decoration: InputDecoration(
+          
+            filled: true,
+            fillColor: AppColor.greyColor,
+            focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: const BorderSide(color: AppColor.secondaryColor)),
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: const BorderSide(color: AppColor.secondaryColor)),
+            disabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: const BorderSide(color: AppColor.secondaryColor)),
+            border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(20),
+                borderSide: const BorderSide(color: AppColor.secondaryColor)),
+            contentPadding: EdgeInsets.only(left: Get.height * .02),
+            hintText: hintText,
+            prefixIcon: prefixIcon,
+            suffixIcon: suffixIcon,
+            prefixIconColor: AppColor.secondaryColor,
+            suffixIconColor: const Color.fromARGB(255, 138, 137, 137)),
       ),
     ]);
   }

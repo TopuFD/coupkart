@@ -6,10 +6,10 @@ class AppImage {
   static const onbordingFour = "assets/images/onbordingFour.png";
   static const dealsOne = "assets/images/product/food.png";
   static const dealsTwo = "assets/images/product/nightLight.png";
-  static const productOne = "assets/images/product/product_one.png";
+  static const productOne = "assets/images/product/product_one.jpg";
   static const productTwo= "assets/images/product/product_two.png";
-  static const nightLightPic= "assets/images/product/nightLightPic.png";
-  static const activityPic= "assets/images/product/activity.png";
-  static const eventPic= "assets/images/product/event.png";
+  static const nightLightPic= "assets/images/product/nightLightPic.jpg";
+  static const activityPic= "assets/images/product/activity.jpg";
+  static const eventPic= "assets/images/product/event.jpg";
   static const subscriptionPic= "assets/images/subscription.png";
 }

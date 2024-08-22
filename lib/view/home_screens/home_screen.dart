@@ -136,7 +136,7 @@ class HomeScreen extends StatelessWidget {
                   height: Get.height * .01,
                 ),
                 SizedBox(
-                  height: Get.height * .28,
+                  height: Get.height * .3,
                   width: Get.width,
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
@@ -144,14 +144,14 @@ class HomeScreen extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return const ProductCard(
                             image: AppImage.productOne,
-                            desce: "20% Off Any 1/2 Jerk Meal With a Drink\n",
+                            desce: "20% Off Any 1/2 Jerk Meal With a Drink",
                             bottomText: "Pepper Grill & Bar",
                             price: "Save  \$2");
                       }),
                 ),
                 // food deals of home page start form here =========================================>
                 SizedBox(
-                  height: Get.height * .02,
+                  height: Get.height * .01,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -187,16 +187,15 @@ class HomeScreen extends StatelessWidget {
                   height: Get.height * .01,
                 ),
                 SizedBox(
-                  height: Get.height * .28,
+                  height: Get.height * .3,
                   width: Get.width,
                   child: ListView.builder(
                       scrollDirection: Axis.horizontal,
                       itemCount: 10,
                       itemBuilder: (context, index) {
-                        return ProductCard(
-                            ontap: () {},
+                        return const ProductCard(
                             image: AppImage.productTwo,
-                            desce: "20% Off Any 1/2 Jerk Meal With a Drink\n",
+                            desce: "20% Off Any 1/2 Jerk Meal With a Drink",
                             bottomText: "Pepper Grill & Bar",
                             price: "Save  \$2");
                       }),

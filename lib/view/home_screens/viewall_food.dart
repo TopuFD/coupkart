@@ -1,5 +1,6 @@
 import 'package:coupkart/utils/app_color.dart';
 import 'package:coupkart/utils/app_image.dart';
+import 'package:coupkart/view/home_screens/product_details.dart';
 import 'package:coupkart/widget/heading_text.dart';
 import 'package:coupkart/widget/product_card.dart';
 import 'package:flutter/material.dart';
@@ -33,7 +34,16 @@ class ViewAllFood extends StatelessWidget {
           itemBuilder: (context, index) {
             return SizedBox(
               height: Get.height * .28,
-              child: const ProductCard(
+              child: ProductCard(
+                ontap: () {
+                  Get.to(const ProductDetails(
+                    imagePath: AppImage.productTwo,
+                    headeing: "20% Off Any 1/2 Jerk Meal With a Drink",
+                    desce:
+                        "Get a free wrap and Drink with any order of a bowl. Press redeem and show this Coupy Deal to a staff member to redeem.",
+                    savePrice: 2,
+                  ));
+                },
                 image: AppImage.productTwo,
                 desce: "20% Off Any 1/2 Jerk Meal With a Drink\n",
                 bottomText: "Pepper Grill & Bar",

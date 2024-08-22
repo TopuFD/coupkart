@@ -1,3 +1,4 @@
+import 'package:coupkart/route/app_route.dart';
 import 'package:coupkart/utils/app_color.dart';
 import 'package:coupkart/utils/app_image.dart';
 import 'package:coupkart/widget/custom_appbar.dart';
@@ -58,13 +59,17 @@ class SubscriptionPage extends StatelessWidget {
                       )
                     ])),
                 SizedBox(
-                  height: Get.height * .02,
+                  height: Get.height * .08,
                 ),
-                subscriptionCart("Basic", 6.99,(){}),
-                subscriptionCart("Standard", 9.99,(){}),
-                subscriptionCart("Premium", 13.99,(){}),
-                subscriptionCart("Super Vip", 19.99,(){}),
-                SizedBox(height: Get.height * .02,)
+                subscriptionCart("Basic", 6.99, () {
+                  Get.toNamed(AppRoute.paymentPage);
+                }),
+                subscriptionCart("Standard", 9.99, () {}),
+                subscriptionCart("Premium", 13.99, () {}),
+                subscriptionCart("Super Vip", 19.99, () {}),
+                SizedBox(
+                  height: Get.height * .02,
+                )
               ],
             ),
           ),
@@ -140,7 +145,9 @@ class SubscriptionPage extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                ontap;
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  ontap();
+                });
               },
               child: Container(
                 height: Get.height * .06,

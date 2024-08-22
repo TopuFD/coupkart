@@ -30,11 +30,22 @@ class ProductDetails extends StatelessWidget {
               SizedBox(
                 height: Get.height * .03,
               ),
-              Image.asset(
-                imagePath,
+              Container(
                 height: Get.height / 2.5,
                 width: Get.width,
-                fit: BoxFit.fill,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(22),
+                  border: Border.all(color: AppColor.primaryTxtColor,width: 2),
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20),
+                  child: Image.asset(
+                    imagePath,
+                    height: Get.height / 2.5,
+                    width: Get.width,
+                    fit: BoxFit.fill,
+                  ),
+                ),
               ),
               SizedBox(
                 height: Get.height * .03,

@@ -21,21 +21,35 @@ class ProductCard extends StatelessWidget {
     return InkWell(
       onTap: ontap,
       child: SizedBox(
-        height: Get.height * .28,
+        height: Get.height * .3,
         width: Get.width * .45,
         child: InkWell(
           onTap: ontap,
           child: Card(
+            color: AppColor.whiteColor,
             child: Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: Get.width * .02, vertical: Get.height * .01),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Image.asset(
-                    image,
-                    height: Get.height * .16,
-                    fit: BoxFit.fill,
+                  Container(
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: AppColor.primaryTxtColor,width: 1),
+                      borderRadius: BorderRadius.circular(22)
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.asset(
+                        image,
+                        height: Get.height * .17,
+
+                        width: Get.width * .35,
+                        fit: BoxFit.cover,
+                        
+                      ),
+                    ),
                   ),
                   SizedBox(
                     height: Get.height * .01,
@@ -50,6 +64,7 @@ class ProductCard extends StatelessWidget {
                       height: 0,
                     ),
                   ),
+                  SizedBox(height: Get.height * .02,),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
