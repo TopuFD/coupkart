@@ -127,6 +127,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
               SizedBox(
                 height: Get.height * .02,
               ),
+              //here is google map===========================================>
               SizedBox(
                 height: Get.height / 3,
                 width: Get.width,
