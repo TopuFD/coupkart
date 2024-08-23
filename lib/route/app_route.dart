@@ -8,6 +8,7 @@ import 'package:coupkart/view/home_screens/activity.dart';
 import 'package:coupkart/view/home_screens/event.dart';
 import 'package:coupkart/view/home_screens/night_light.dart';
 import 'package:coupkart/view/home_screens/popular_deal.dart';
+import 'package:coupkart/view/home_screens/product_details.dart';
 import 'package:coupkart/view/home_screens/viewall_food.dart';
 import 'package:coupkart/view/navigation_bar.dart';
 import 'package:coupkart/view/profile_screens/edit_profileinfo.dart';
@@ -44,6 +45,8 @@ class AppRoute {
   static String viewNightLight = "/viewNightLight";
   static String viewActivity = "/viewActivity";
   static String viewEvent = "/viewEvent";
+  static String productDetails = "/productDetails";
+
   static String barOfPlaces = "/barOfPlaces";
 
   static List<GetPage> getPage = [
@@ -60,6 +63,7 @@ class AppRoute {
     GetPage(name: viewNightLight, page: () => const ViewNightLight()),
     GetPage(name: viewActivity, page: () => const ViewActivity()),
     GetPage(name: viewEvent, page: () => const ViewEvent()),
+    GetPage(name: productDetails, page: () => ProductDetails()),
     GetPage(name: barOfPlaces, page: () => const BarOfPlaces()),
     GetPage(name: profileInfo, page: () => const ProfileInfo()),
     GetPage(name: editProfileInfo, page: () => EditProfileinfo()),

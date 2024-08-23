@@ -1,6 +1,6 @@
+import 'package:coupkart/route/app_route.dart';
 import 'package:coupkart/utils/app_color.dart';
 import 'package:coupkart/utils/app_image.dart';
-import 'package:coupkart/view/home_screens/product_details.dart';
 import 'package:coupkart/widget/heading_text.dart';
 import 'package:coupkart/widget/product_card.dart';
 import 'package:flutter/material.dart';
@@ -27,28 +27,23 @@ class ViewAllFood extends StatelessWidget {
             crossAxisCount: 2,
             crossAxisSpacing: 5,
             mainAxisSpacing: 5,
-            childAspectRatio: 0.78,
+            childAspectRatio: 0.76 ,
           ),
           itemCount: 30,
           padding: const EdgeInsets.all(8),
           itemBuilder: (context, index) {
-            return SizedBox(
-              height: Get.height * .28,
-              child: ProductCard(
-                ontap: () {
-                  Get.to(const ProductDetails(
-                    imagePath: AppImage.productTwo,
-                    headeing: "20% Off Any 1/2 Jerk Meal With a Drink",
-                    desce:
-                        "Get a free wrap and Drink with any order of a bowl. Press redeem and show this Coupy Deal to a staff member to redeem.",
-                    savePrice: 2,
-                  ));
-                },
-                image: AppImage.productTwo,
-                desce: "20% Off Any 1/2 Jerk Meal With a Drink\n",
-                bottomText: "Pepper Grill & Bar",
-                price: "Save  \$2",
-              ),
+            return ProductCard(
+              ontap: () {
+                Get.toNamed(AppRoute.productDetails,arguments: {
+                  "imgPath": AppImage.productTwo,
+                  "heading": "20% Off Any 1/2 Jerk Meal With a Drink",
+                  "desce": "Get a free wrap and Drink with any order of a bowl. Press redeem and show this Coupy Deal to a staff member to redeem."
+                });
+              },
+              image: AppImage.productTwo,
+              desce: "20% Off Any 1/2 Jerk Meal With a Drink",
+              bottomText: "Pepper Grill & Bar",
+              price: "Save  \$2",
             );
           },
         ));

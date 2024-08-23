@@ -1,5 +1,5 @@
+import 'package:coupkart/route/app_route.dart';
 import 'package:coupkart/utils/app_color.dart';
-import 'package:coupkart/view/home_screens/product_details.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../utils/app_image.dart';
@@ -33,7 +33,7 @@ class FavouriteScreen extends StatelessWidget {
             crossAxisCount: 2,
             crossAxisSpacing: 5,
             mainAxisSpacing: 5,
-            childAspectRatio: 0.78,
+            childAspectRatio: 0.76,
           ),
           itemCount: 30,
           padding: const EdgeInsets.all(8),
@@ -42,13 +42,11 @@ class FavouriteScreen extends StatelessWidget {
               height: Get.height * .28,
               child: ProductCard(
                 ontap: () {
-                  Get.to(const ProductDetails(
-                    imagePath: AppImage.eventPic,
-                    headeing: "20% Off Any 1/2 Jerk Meal With a Drink",
-                    desce:
-                        "Get a free wrap and Drink with any order of a bowl. Press redeem and show this Coupy Deal to a staff member to redeem.",
-                    savePrice: 2,
-                  ));
+                  Get.toNamed(AppRoute.productDetails,arguments: {
+                  "imgPath": AppImage.eventPic,
+                    "heading": "20% Off Any 1/2 Jerk Meal With a Drink",
+                    "desce": "Get a free wrap and Drink with any order of a bowl. Press redeem and show this Coupy Deal to a staff member to redeem."
+                });
                 },
                 image: AppImage.eventPic,
                 desce: "20% Off Any 1/2 Jerk Meal With a Drink",

@@ -142,7 +142,16 @@ class HomeScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemCount: 10,
                       itemBuilder: (context, index) {
-                        return const ProductCard(
+                        return ProductCard(
+                            ontap: () {
+                              Get.toNamed(AppRoute.productDetails, arguments: {
+                                "imgPath": AppImage.productOne,
+                                "heading":
+                                    "20% Off Any 1/2 Jerk Meal With a Drink",
+                                "desce":
+                                    "Get a free wrap and Drink with any order of a bowl. Press redeem and show this Coupy Deal to a staff member to redeem."
+                              });
+                            },
                             image: AppImage.productOne,
                             desce: "20% Off Any 1/2 Jerk Meal With a Drink",
                             bottomText: "Pepper Grill & Bar",
@@ -193,7 +202,16 @@ class HomeScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       itemCount: 10,
                       itemBuilder: (context, index) {
-                        return const ProductCard(
+                        return ProductCard(
+                            ontap: () {
+                              Get.toNamed(AppRoute.productDetails, arguments: {
+                                "imgPath": AppImage.productTwo,
+                                "heading":
+                                    "20% Off Any 1/2 Jerk Meal With a Drink",
+                                "desce":
+                                    "Get a free wrap and Drink with any order of a bowl. Press redeem and show this Coupy Deal to a staff member to redeem."
+                              });
+                            },
                             image: AppImage.productTwo,
                             desce: "20% Off Any 1/2 Jerk Meal With a Drink",
                             bottomText: "Pepper Grill & Bar",

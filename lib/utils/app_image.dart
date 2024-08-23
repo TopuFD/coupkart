@@ -12,4 +12,7 @@ class AppImage {
   static const activityPic= "assets/images/product/activity.jpg";
   static const eventPic= "assets/images/product/event.jpg";
   static const subscriptionPic= "assets/images/subscription.png";
+  
+  static const exitingDeal = "assets/images/exitingDeal.png";
+  static const saveMony = "assets/images/savemony.png";
 }
