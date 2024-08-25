@@ -13,10 +13,6 @@ class ProductDetails extends StatelessWidget {
   ProductDetails({
     super.key,
   });
-  // final String imagePath;
-  // final String headeing;
-  // final String desce;
-  // final int savePrice;
   final Map<String, dynamic> productData = Get.arguments;
   int redeemValu = 1;
   bool redeemTap = false;
@@ -139,8 +135,8 @@ class ProductDetails extends StatelessWidget {
                   bottomSheet(context);
                 },
                 child: Container(
-                  width: 342,
-                  height: 42,
+                  width: Get.width /1.1,
+                  height: Get.height * .055,
                   padding: const EdgeInsets.all(10),
                   decoration: ShapeDecoration(
                     color: AppColor.primaryTxtColor,

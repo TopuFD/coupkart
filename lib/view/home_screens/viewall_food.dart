@@ -30,7 +30,7 @@ class ViewAllFood extends StatelessWidget {
             childAspectRatio: 0.76 ,
           ),
           itemCount: 30,
-          padding: const EdgeInsets.all(8),
+          padding: EdgeInsets.all(Get.height * .01),
           itemBuilder: (context, index) {
             return ProductCard(
               ontap: () {
